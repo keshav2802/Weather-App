@@ -12,6 +12,25 @@ function searchWeather(searchTerm) {
 
 function init(result) {
   console.log(result);
+  let cityName = document.getElementById("cityName");
+  let temperature = document.getElementById("temperature");
+  let weatherDescriptionHeader = document.getElementById("weatherDescriptionHeader");
+  let icon = document.getElementById("icon");
+  let windSpeed = document.getElementById("windSpeed");
+  let humidity = document.getElementById("humidity");
+  let imageContainer = document.getElementById("imageContainer");
+
+  if(result.cod === "404") {
+    let errorMessage = document.getElementById("errorMessage");
+    errorMessage.innerText = result.message;
+    cityName.innerText = "";
+    temperature.innerHTML = "";
+    weatherDescriptionHeader.innerText = ""
+    imageContainer.innerHTML = "";
+    windSpeed.innerText = "";
+    humidity.innerText = "";
+    return;
+  }
   switch(result.weather[0].main) {
     case "Clear":
       document.body.style.backgroundImage = "url('img/clear.jpg')";
@@ -36,13 +55,7 @@ function init(result) {
       break;
   }
 
-  let cityName = document.getElementById("cityName");
-  let temperature = document.getElementById("temperature");
-  let weatherDescriptionHeader = document.getElementById("weatherDescriptionHeader");
-  let icon = document.getElementById("icon");
-  let windSpeed = document.getElementById("windSpeed");
-  let humidity = document.getElementById("humidity");
-
+  
   cityName.innerText = result.name;
   temperature.innerHTML = Math.floor(result.main.temp) + "&#176C";
   let weatherDescription = result.weather[0].description;
@@ -50,6 +63,10 @@ function init(result) {
   icon.src = `http://openweathermap.org/img/wn/${result.weather[0].icon}.png`;
   windSpeed.innerText = "Winds at " + Math.floor(result.wind.speed * 18/5) + " km/h";
   humidity.innerText = "Humidity levels at " + result.main.humidity + " %";
+}
+
+function setPositionForWeatherInfo() {
+  let weatherContainer = document.getElementById("weatherContainer");
 }
 
 document.getElementById("searchButton").addEventListener('click', () => {
