@@ -1,6 +1,5 @@
 body {
   background-image: url('/img/default.jpg');
-  margin-top: 0;
   background-position-x: center;
   color: white;
   text-shadow: 2px 2px 1px black;
@@ -12,6 +11,7 @@ body {
   padding: 50px;
   border-radius: 10px;
   position: absolute;
+  visibility: hidden;
 }
 #weatherContainer h1 {
   margin: 5px;
