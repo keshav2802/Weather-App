@@ -25,11 +25,17 @@ body {
 }
 #searchContainer input {
   width: 200px;
+  outline: none;
 }
 #searchContainer button {
-  background-color: rgba(127, 140, 141,1.0);
+  background-color: rgba(46, 204, 113,1.0);
   width: 75px;
   color: white;
+  outline: none;
+}
+#searchContainer button:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 2px black;
 }
 .searchControl {
   box-shadow: 1px 1px 3px blueviolet;
