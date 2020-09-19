@@ -12,12 +12,13 @@ The app uses the OpenWeather API to get weather data. Has a very cool and simple
 * CSS
 * JavaScript
 
-# Installation
+# Installation and Development
 
 1. Download the ZIP
 2. Extract the folder
-3. Move into the folder and open index.html with your browser.
-4. Start exploring
+3. Open the folder in your favourite browser
+4. Open the index.html on a live server
+5. Start exploring
 
 # Screenshots
 
