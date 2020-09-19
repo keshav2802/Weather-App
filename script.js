@@ -35,6 +35,14 @@ function init(result) {
     default:
       break;
   }
+
+  let cityName = document.getElementById("cityName");
+  let temperature = document.getElementById("temperature");
+  let weatherDescriptionHeader = document.getElementById("weatherDescriptionHeader");
+  let icon = document.getElementById("icon");
+  let windSpeed = document.getElementById("windSpeed");
+  let humidity = document.getElementById("humidity");
+
 }
 
 document.getElementById("searchButton").addEventListener('click', () => {
