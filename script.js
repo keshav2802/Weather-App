@@ -9,3 +9,9 @@ function searchWeather(searchTerm) {
     init(result);
   });
 }
+
+document.getElementById("searchButton").addEventListener('click', () => {
+  let searchTerm = document.getElementById("searchInput").value;
+  if(searchTerm)
+    searchWeather(searchTerm);
+})
