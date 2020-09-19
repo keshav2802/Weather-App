@@ -32,6 +32,7 @@ body {
   width: 75px;
   color: white;
   outline: none;
+  color: black;
 }
 #searchContainer button:hover {
   cursor: pointer;
