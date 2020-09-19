@@ -43,6 +43,13 @@ function init(result) {
   let windSpeed = document.getElementById("windSpeed");
   let humidity = document.getElementById("humidity");
 
+  cityName.innerText = result.name;
+  temperature.innerHTML = Math.floor(result.main.temp) + "&#176 C";
+  let weatherDescription = result.weather[0].description;
+  weatherDescriptionHeader.innerText = weatherDescription.charAt(0).toUpperCase() + weatherDescription.slice(1);
+  icon.src = `http://openweathermap.org/img/wn/${result.weather[0].icon}@2x.png`;
+  windSpeed.innerText = "Winds at " + Math.floor(result.wind.speed * 18/5) + " km/h";
+  humidity.innerText = "Humidity levels at " + result.main.humidity + " %";
 }
 
 document.getElementById("searchButton").addEventListener('click', () => {
